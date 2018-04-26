@@ -41,7 +41,8 @@ func (c *Client) listen() {
 			if c.Stopped() {
 				// Normal termination (ws Receive returns error when ws is
 				// closed by other goroutine)
-				log.Println("Listen error and c stopped :", err)
+				// NOTE commented out annoying log message while cleanly closing websocket
+				//log.Println("Listen error and c stopped :", err)
 				return
 			}
 			c.m.Lock()
